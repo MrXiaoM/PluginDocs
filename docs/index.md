@@ -13,10 +13,6 @@ postList: none
 # hideRightBar: true # 是否隐藏右侧边栏
 ---
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://s1.mrxiaom.top/github-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://s1.mrxiaom.top/github-snake.svg" />
-  <img alt="github-snake" src="https://s1.mrxiaom.top/github-snake.svg" />
-</picture>
+![](https://s1.mrxiaom.top/github-snake.svg)
 
 ![](https://github-readme-stats.vercel.app/api?username=mrxiaom&show_icons=true&title_color=00FFC6&text_color=F8F8FF&icon_color=fff000&bg_color=30,10111E,282A35&hide_border=true)
