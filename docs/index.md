@@ -13,6 +13,6 @@ postList: none
 # hideRightBar: true # 是否隐藏右侧边栏
 ---
 
-![](https://s1.mrxiaom.top/github-snake.svg)
-
 ![](https://github-readme-stats.vercel.app/api?username=mrxiaom&show_icons=true&title_color=00FFC6&text_color=F8F8FF&icon_color=fff000&bg_color=30,10111E,282A35&hide_border=true)
+
+![](https://s1.mrxiaom.top/github-snake.svg)
