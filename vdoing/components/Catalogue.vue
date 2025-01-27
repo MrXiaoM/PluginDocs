@@ -208,7 +208,7 @@ dl, dd
         font-weight bold
       dd
         margin-top 0.7rem
-        margin-left 1rem
+        margin-left 0.2rem
         a:not(.header-anchor)
           margin-bottom 0.5rem
           display inline-block
