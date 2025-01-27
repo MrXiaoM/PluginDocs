@@ -184,9 +184,6 @@ dl, dd
   .catalogue-title
     font-size 1.8rem
     margin 2rem 0
-  .catalogue-first-title
-    font-size 1.45rem
-    font-weight bold
   .catalogue-content
     dl
       margin-bottom 1.8rem
@@ -206,6 +203,9 @@ dl, dd
         font-size 1.1rem
         &:hover .header-anchor
           opacity 1
+      .catalogue-first-title
+        font-size 2.4rem
+        font-weight bold
       dd
         margin-top 0.7rem
         margin-left 1rem
