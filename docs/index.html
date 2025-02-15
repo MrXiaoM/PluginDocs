@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>插件文档 | MCIO Plugins</title>
+    <meta name="generator" content="VuePress 1.9.9">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="人间工作P的插件文档。">
+    <meta name="keywords" content="技术文档,人间工作P,人间工作,我的世界,服务器,多人游戏,插件,kotlin,java,git,github,minecraft,mc,bukkit,spigotmc,spigot,papermc,paper,bungeecord,velocity,plugin,mod,fabric,forge,neoforge,neoforged">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.1e483854.css" as="style"><link rel="preload" href="/assets/js/app.6af67fa2.js" as="script"><link rel="preload" href="/assets/js/2.a5376a59.js" as="script"><link rel="preload" href="/assets/js/5.bed28b70.js" as="script"><link rel="prefetch" href="/assets/js/10.09535bdc.js"><link rel="prefetch" href="/assets/js/11.b356a213.js"><link rel="prefetch" href="/assets/js/12.0075a7bb.js"><link rel="prefetch" href="/assets/js/13.196c157e.js"><link rel="prefetch" href="/assets/js/14.781eabb9.js"><link rel="prefetch" href="/assets/js/15.1fcd1298.js"><link rel="prefetch" href="/assets/js/16.07a46a72.js"><link rel="prefetch" href="/assets/js/17.634cf571.js"><link rel="prefetch" href="/assets/js/18.13348ecf.js"><link rel="prefetch" href="/assets/js/19.a1f90517.js"><link rel="prefetch" href="/assets/js/20.817a2c11.js"><link rel="prefetch" href="/assets/js/21.239a6e7f.js"><link rel="prefetch" href="/assets/js/22.37f5a78c.js"><link rel="prefetch" href="/assets/js/23.3b1d6cf1.js"><link rel="prefetch" href="/assets/js/24.7e1333dd.js"><link rel="prefetch" href="/assets/js/25.6ba2f313.js"><link rel="prefetch" href="/assets/js/26.d59b17dc.js"><link rel="prefetch" href="/assets/js/27.78a368bf.js"><link rel="prefetch" href="/assets/js/28.19068f45.js"><link rel="prefetch" href="/assets/js/3.4ef41097.js"><link rel="prefetch" href="/assets/js/4.e390dedf.js"><link rel="prefetch" href="/assets/js/6.fe3a3b0f.js"><link rel="prefetch" href="/assets/js/7.6769270a.js"><link rel="prefetch" href="/assets/js/8.4567cf05.js"><link rel="prefetch" href="/assets/js/9.20f23cbb.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.1e483854.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open no-sidebar only-sidebarItem"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="MCIO Plugins" class="logo"> <span class="site-name can-hide">MCIO Plugins</span></a> <div class="links"><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://afdian.com/a/mrxiaom" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  爱发电
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/MrXiaoM/PluginDocs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://static.mcio.dev/mrxiaom.top/images/avatar-new.jpg"> <div class="blogger-info"><h3>人间工作P</h3> <span>我每天都好困… 最近在学习和进行 VOCALOID 创作</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://afdian.com/a/mrxiaom" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  爱发电
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/MrXiaoM/PluginDocs" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/docs/" aria-current="page" class="active sidebar-link">插件文档</a></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="placeholder"></div> <div class="theme-vdoing-content theme-vdoing-content" data-v-5a18ee5e><div class="column-wrapper" data-v-5a18ee5e><!----> <dl class="column-info" data-v-5a18ee5e><dt class="title" data-v-5a18ee5e>插件文档</dt> <dd class="description" data-v-5a18ee5e>Bukkit插件相关使用文档</dd></dl></div> <div class="catalogue-wrapper" data-v-5a18ee5e><div class="catalogue-title" data-v-5a18ee5e>目录</div> <div class="catalogue-content" data-v-5a18ee5e><dl data-v-5a18ee5e><dt id="FiguraLambda" class="catalogue-first-title" data-v-5a18ee5e><a href="#FiguraLambda" class="header-anchor" data-v-5a18ee5e>#</a>
+            FiguraLambda
+          </dt> <dd data-v-5a18ee5e><a href="/docs/figura/intro" data-v-5a18ee5e>Lambda生态简介
+                  <!----></a><a href="/docs/figura/install" data-v-5a18ee5e>安装教程
+                  <!----></a><a href="/docs/figura/avatars" data-v-5a18ee5e>FiguraAvatars 导出外观
+                  <!----></a><a href="/docs/figura/commands" data-v-5a18ee5e>命令与权限
+                  <!----></a></dd></dl><dl data-v-5a18ee5e><dt id="SweetAdaptiveShop" class="catalogue-first-title" data-v-5a18ee5e><a href="#SweetAdaptiveShop" class="header-anchor" data-v-5a18ee5e>#</a>
+            SweetAdaptiveShop
+          </dt> <dd data-v-5a18ee5e><a href="/docs/adaptiveshop/intro" data-v-5a18ee5e>简介
+                  <!----></a><a href="/docs/adaptiveshop/commands" data-v-5a18ee5e>命令与权限
+                  <!----></a><a href="/docs/adaptiveshop/placeholders" data-v-5a18ee5e>PAPI变量
+                  <!----></a></dd></dl><dl data-v-5a18ee5e><dt id="SweetCheckout" class="catalogue-first-title" data-v-5a18ee5e><a href="#SweetCheckout" class="header-anchor" data-v-5a18ee5e>#</a>
+            SweetCheckout
+          </dt> <dd data-v-5a18ee5e><a href="/docs/checkout/intro" data-v-5a18ee5e>简介
+                  <!----></a><a href="/docs/checkout/install/backend" data-v-5a18ee5e>部署 支付系统后端
+                  <!----></a><a href="/docs/checkout/install/bukkit" data-v-5a18ee5e>部署 Bukkit插件
+                  <!----></a><a href="/docs/checkout/install/backend/alipay" data-v-5a18ee5e>后端部署 订单码支付
+                  <!----></a><a href="/docs/checkout/install/backend/wechat" data-v-5a18ee5e>后端部署 Native支付
+                  <!----></a><a href="/docs/checkout/install/backend/alipay-hook" data-v-5a18ee5e>后端部署 支付宝Hook
+                  <!----></a><a href="/docs/checkout/install/backend/wechat-hook" data-v-5a18ee5e>后端部署 微信Hook
+                  <!----></a><a href="/docs/checkout/commands" data-v-5a18ee5e>命令与权限
+                  <!----></a><a href="/docs/checkout/placeholders" data-v-5a18ee5e>PAPI变量
+                  <!----></a></dd></dl><dl data-v-5a18ee5e><dt id="SweetDrops" class="catalogue-first-title" data-v-5a18ee5e><a href="#SweetDrops" class="header-anchor" data-v-5a18ee5e>#</a>
+            SweetDrops
+          </dt> <dd data-v-5a18ee5e><a href="/docs/drops/intro" data-v-5a18ee5e>简介
+                  <!----></a><a href="/docs/drops/commands" data-v-5a18ee5e>命令与权限
+                  <!----></a><a href="/docs/drops/dig-events" data-v-5a18ee5e>挖掘事件
+                  <!----></a></dd></dl><dl data-v-5a18ee5e><dt id="SweetRewards" class="catalogue-first-title" data-v-5a18ee5e><a href="#SweetRewards" class="header-anchor" data-v-5a18ee5e>#</a>
+            SweetRewards
+          </dt> <dd data-v-5a18ee5e><a href="/docs/rewards/intro" data-v-5a18ee5e>简介
+                  <!----></a><a href="/docs/rewards/commands" data-v-5a18ee5e>命令与权限
+                  <!----></a></dd></dl><dl data-v-5a18ee5e><dt id="杂物" class="catalogue-first-title" data-v-5a18ee5e><a href="#杂物" class="header-anchor" data-v-5a18ee5e>#</a>
+            杂物
+          </dt> <dd data-v-5a18ee5e><a href="/docs/misc/customized" data-v-5a18ee5e>插件定制细则
+                  <!----></a></dd></dl></div></div></div> <div class="content-wrapper"><!----> <!----> <!---->  <div class="theme-vdoing-content content__default"></div></div>  <div class="page-edit"><!----> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2025/01/27, 17:12:15</span></div></div> <div class="page-nav-wapper"><!----> <!----></div></div> <!----></main></div> <div class="footer">
+  Theme fork from
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> 
+    | Copyright © 2018-2025
+    <span><a href="https://www.mrxiaom.top">人间工作P</a> | 到<a class="afdian" href="https://afdian.com/a/mrxiaom" target="_blank">爱发电</a>支持我<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p></span></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.6af67fa2.js" defer></script><script src="/assets/js/2.a5376a59.js" defer></script><script src="/assets/js/5.bed28b70.js" defer></script>
+  </body>
+</html>
