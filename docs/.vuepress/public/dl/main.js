@@ -111,15 +111,22 @@
 				$textAuthor.val(pair[0]);
 				$textName.val(pair[1]);
 				sync();
+				history.pushState({page:1}, '', window.location.pathname);
 			}
 		}
 	} else {
+		let resetPathName = false;
 		if (params.has('author')) {
+			resetPathName = true;
 			$textAuthor.val(params.get('author'));
 		}
 		if (params.has('repo')) {
+			resetPathName = true;
 			$textName.val(params.get('repo'));
 			sync();
+		}
+		if (resetPathName) {
+			history.pushState({page:1}, '', window.location.pathname);
 		}
 	}
 })(jQuery);
