@@ -74,7 +74,7 @@
 						download = '<td class="download"><a title="' + asset.name + '" href="' + url + '" data-original-download-url="' + asset.browser_download_url + '" target="_blank" class="icon solid fa-download"></a></td>';
 					} else {
 						let assets = [];
-						for (let j = 0; j < assets.length; j++) {
+						for (let j = 0; j < obj.assets.length; j++) {
 							let asset = obj.assets[j];
 							let url = mirror(asset.browser_download_url);
 							assets.push('<li><a title="' + asset.name + '" href="' + url + '" data-original-download-url="' + asset.browser_download_url + '" target="_blank" class="icon solid fa-download"> ' + asset.name + '</a></li>');
