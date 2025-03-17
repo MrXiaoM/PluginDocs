@@ -71,13 +71,13 @@
 					if (obj.assets.length == 1) {
 						let asset = obj.assets[0];
 						let url = mirror(asset.browser_download_url);
-						download = '<td class="download"><a title="' + asset.name + '" href="' + url + '" data-original-download-url="' + asset.browser_download_url + '" class="icon solid fa-download"></a></td>';
+						download = '<td class="download"><a title="' + asset.name + '" href="' + url + '" data-original-download-url="' + asset.browser_download_url + '" target="_blank" class="icon solid fa-download"></a></td>';
 					} else {
 						let assets = [];
 						for (let j = 0; j < assets.length; j++) {
 							let asset = obj.assets[j];
 							let url = mirror(asset.browser_download_url);
-							assets.push('<li><a title="' + asset.name + '" href="' + url + '" data-original-download-url="' + asset.browser_download_url + '" class="icon solid fa-download"> ' + asset.name + '</a></li>');
+							assets.push('<li><a title="' + asset.name + '" href="' + url + '" data-original-download-url="' + asset.browser_download_url + '" target="_blank" class="icon solid fa-download"> ' + asset.name + '</a></li>');
 						}
 						download = '<td><ul class="inline">' + assets.join('') + '</ul></td>'
 					}
