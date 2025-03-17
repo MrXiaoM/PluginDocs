@@ -71,13 +71,13 @@
 					if (obj.assets.length == 1) {
 						let asset = obj.assets[0];
 						let url = mirror(asset.browser_download_url);
-						download = '<td class="download"><a title="' + asset.name + '" href="' + url + '" class="icon solid fa-download"></a></td>';
+						download = '<td class="download"><a title="' + asset.name + '" href="' + url + '" data-original-download-url="' + asset.browser_download_url + '" class="icon solid fa-download"></a></td>';
 					} else {
 						let assets = [];
 						for (let j = 0; j < assets.length; j++) {
 							let asset = obj.assets[j];
 							let url = mirror(asset.browser_download_url);
-							assets.push('<li><a title="' + asset.name + '" href="' + url + '" class="icon solid fa-download"> ' + asset.name + '</a></li>');
+							assets.push('<li><a title="' + asset.name + '" href="' + url + '" data-original-download-url="' + asset.browser_download_url + '" class="icon solid fa-download"> ' + asset.name + '</a></li>');
 						}
 						download = '<td><ul class="inline">' + assets.join('') + '</ul></td>'
 					}
@@ -89,6 +89,19 @@
 		$syncBtn.prop('disabled', false)
 	}
 	$syncBtn.click(sync);
+	$mirrorCategory.change(function() {
+		let mirrorLink = $mirrorCategory.val()
+		function mirror(url) {
+			return mirrorLink
+				.replace('{0}', url)
+				.replace('{1}', url.replace('https://', ''))
+		}
+		$('a[data-original-download-url]').each(function(i,e) {
+			let link = $(e);
+			let url = link.data('original-download-url');
+			link.prop('href', mirror(url));
+		});
+	});
 
 	if (params.has('url')) {
 		let url = new URL(params.get('url'));
