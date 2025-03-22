@@ -62,7 +62,7 @@
 				return;
 			}
 			$downloadTable.append(
-				'<tr><td><ul class="inline-ul">' +
+				'<tr><td colspan="2"><ul class="inline-ul">' +
 				  '<li><a target="_blank" href="https://github.com/' + author + '/' + name + '">Github</a></li>' +
 				  '<li><a target="_blank" href="https://github.com/' + author + '/' + name + '/releases">Releases</a></li>' +
 				  '<li><a target="_blank" href="https://github.com/' + author + '/' + name + '/actions">开发版本下载</a></li>' +
