@@ -1,18 +1,12 @@
-/**
- * 提示：如您想使用JS版本的配置文件可参考：https://github.com/xugaoyi/vuepress-theme-vdoing/tree/a2f03e993dd2f2a3afdc57cf72adfc6f1b6b0c32/docs/.vuepress
- */
-import { resolve } from 'path'
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
 import dayjs from 'dayjs'
-import htmlModules from './config/htmlModules' // 自定义插入的html块
 
 const DOMAIN_NAME = 'plugins.mcio.dev' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
-  theme: 'vdoing', // 使用npm主题包
-  // theme: resolve(__dirname, '../../vdoing'), // 使用本地主题包
+  theme: 'vdoing',
 
   locales: {
     '/': {
@@ -21,7 +15,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       description: '人间工作P的插件文档。',
     }
   },
-  // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
+  // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
+  // base: '/',
 
   // 主题配置
   themeConfig: {
@@ -65,7 +60,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     updateBar: { // 最近更新栏
       showToArticle: false, // 显示到文章页底部，默认true
-      moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
+      moreArticle: '/timeline' // “更多文章”跳转的页面，默认'/archives'
     },
     // rightMenuBar: false, // 是否显示右侧文章大纲栏，默认true (屏宽小于1300px下无论如何都不显示)
     // sidebarOpen: false, // 初始状态是否打开左侧边栏，默认true
@@ -119,17 +114,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         '<a href="https://www.mrxiaom.top">人间工作P</a> | 到<a class="afdian" href="https://afdian.com/a/mrxiaom" target="_blank">爱发电</a>支持我'
       + '<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p>',
     },
-
-    // 扩展自动生成frontmatter。（当md文件的frontmatter不存在相应的字段时将自动添加。不会覆盖已有的数据。）
-    extendFrontmatter: {
-      author: {
-        name: 'MrXiaoM',
-        link: 'https://www.mrxiaom.top'
-      }
-    },
-
-    // 自定义hmtl(广告)模块
-    htmlModules
   },
 
   // 注入到页面<head>中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
@@ -142,15 +126,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         content: '技术文档,人间工作P,人间工作,我的世界,服务器,多人游戏,插件,kotlin,java,git,github,minecraft,mc,bukkit,spigotmc,spigot,papermc,paper,bungeecord,velocity,plugin,mod,fabric,forge,neoforge,neoforged',
       },
     ],
-    ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
-    // [
-    //   'script',
-    //   {
-    //     'data-ad-client': 'ca-pub-7828333725993554',
-    //     async: 'async',
-    //     src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
-    //   },
-    // ], // 网站关联Google AdSense 与 html格式广告支持（你可以去掉）
+    ['meta', { name: 'theme-color', content: '#bb4445' }], // 移动浏览器主题颜色
   ],
 
 
@@ -184,26 +160,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
         },
       },
     ],
-    /*[
-      'vuepress-plugin-comment', // 评论
-      {
-        choosen: 'gitalk',
-        options: {
-          clientID: 'a6e1355287947096b88b',
-          clientSecret: 'f0e77d070fabfcd5af95bebb82b2d574d7248d71',
-          repo: 'blog-gitalk-comment', // GitHub 仓库
-          owner: 'xugaoyi', // GitHub仓库所有者
-          admin: ['xugaoyi'], // 对仓库有写权限的人
-          // distractionFreeMode: true,
-          pagerDirection: 'last', // 'first'正序 | 'last'倒序
-          id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
-          title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
-          labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
-          body:
-            '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
-        },
-      },
-    ],*/
     [
       '@vuepress/last-updated', // "上次更新"时间格式
       {
@@ -222,6 +178,5 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
   // 监听文件变化并重新构建
   extraWatchFiles: [
     '.vuepress/config.ts',
-    '.vuepress/config/htmlModules.ts',
   ]
 })
