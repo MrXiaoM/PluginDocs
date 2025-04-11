@@ -14,7 +14,7 @@
           <dl v-if="type(item) === 'array'" :key="index" class="inline">
             <dt>
               <router-link :to="item[2]"
-                >{{ `${item[1]}` }}
+                >{{ `${index + 1}. ${item[1]}` }}
                 <span class="title-tag" v-if="item[3]">
                   {{ item[3] }}
                 </span>
@@ -23,16 +23,16 @@
           </dl>
           <dl v-else-if="type(item) === 'object'" :key="index">
             <!-- 一级目录 -->
-            <dt :id="(anchorText = item.title)" class="catalogue-first-title">
+            <dt :id="(anchorText = item.title)">
               <a :href="`#${anchorText}`" class="header-anchor">#</a>
-              {{ `${item.title}` }}
+              {{ `${index + 1}. ${item.title}` }}
             </dt>
             <dd>
               <!-- 二级目录 -->
               <template v-for="(c, i) in item.children">
                 <template v-if="type(c) === 'array'">
                   <router-link :to="c[2]" :key="i"
-                    >{{ `${c[1]}` }}
+                    >{{ `${index + 1}-${i + 1}. ${c[1]}` }}
                     <span class="title-tag" v-if="c[3]">
                       {{ c[3] }}
                     </span>
@@ -46,14 +46,14 @@
                 >
                   <div :id="(anchorText = c.title)" class="sub-title">
                     <a :href="`#${anchorText}`" class="header-anchor">#</a>
-                    {{ `${c.title}` }}
+                    {{ `${index + 1}-${i + 1}. ${c.title}` }}
                   </div>
                   <router-link
                     v-for="(cc, ii) in c.children"
                     :to="cc[2]"
                     :key="`${index + 1}-${i + 1}-${ii + 1}`"
                   >
-                    {{ `${cc[1]}` }}
+                    {{ `${index + 1}-${i + 1}-${ii + 1}. ${cc[1]}` }}
                     <span class="title-tag" v-if="cc[3]">
                       {{ cc[3] }}
                     </span>
@@ -182,7 +182,7 @@ dl, dd
       margin 0.5rem 0
 .catalogue-wrapper
   .catalogue-title
-    font-size 1.8rem
+    font-size 1.45rem
     margin 2rem 0
   .catalogue-content
     dl
@@ -203,12 +203,9 @@ dl, dd
         font-size 1.1rem
         &:hover .header-anchor
           opacity 1
-      .catalogue-first-title
-        font-size 2.4rem
-        font-weight bold
       dd
         margin-top 0.7rem
-        margin-left 0.2rem
+        margin-left 1rem
         a:not(.header-anchor)
           margin-bottom 0.5rem
           display inline-block

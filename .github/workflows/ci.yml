@@ -36,9 +36,6 @@ jobs:
           node-version: '18.x'
       - name: Build and deploy
         run: |
-          cd vdoing
-          npm pack
-          cd ..
           yarn
           yarn build
       - name: Upload artifact

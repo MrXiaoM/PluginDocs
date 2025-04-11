@@ -131,6 +131,8 @@ export default {
     @extend $vdoing-wrapper
 .theme-style-line
   .page
+    @media (min-width $MQMobile)
+      padding-top $navbarHeight
     &>*
       &:not(.footer)
         box-shadow 0 0

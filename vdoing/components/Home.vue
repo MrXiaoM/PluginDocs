@@ -111,11 +111,14 @@
 
     <MainLayout>
       <template #mainLeft>
+        <Content v-if="showBanner && homeData.contentAsFooter !== true" class="theme-vdoing-content custom card-box" />
+
         <!-- 简约版文章列表 -->
         <UpdateArticle
           class="card-box"
           v-if="homeData.postList === 'simple'"
           :length="homeData.simplePostListLength || 10"
+          :home="true"
           :moreArticle="
             $themeConfig.updateBar && $themeConfig.updateBar.moreArticle
           "
@@ -125,7 +128,14 @@
         <template
           v-else-if="!homeData.postList || homeData.postList === 'detailed'"
         >
-          <PostList :currentPage="currentPage" :perPage="perPage" />
+          <Pagination
+            :total="total"
+            :perPage="perPage"
+            :currentPage="currentPage"
+            @getCurrentPage="handlePagination"
+            v-show="Math.ceil(total / perPage) > 1"
+          />
+          <PostList :home="true" :currentPage="currentPage" :perPage="perPage" />
           <Pagination
             :total="total"
             :perPage="perPage"
@@ -135,7 +145,7 @@
           />
         </template>
 
-        <Content class="theme-vdoing-content custom card-box" />
+        <Content v-if="homeData.contentAsFooter === true" class="theme-vdoing-content custom card-box" />
       </template>
 
       <template v-if="!homeData.hideRightBar" #mainRight>
@@ -474,13 +484,14 @@ export default {
       .card-box
         margin-bottom 2rem
       .pagination
-        margin-bottom 3rem
+        margin-top: 1rem
+        margin-bottom: 1rem
       .theme-vdoing-content
         padding 0 2rem
         overflow hidden
         border none
         &>:first-child
-          padding-top 2rem
+          padding-top 1rem
         &>:last-child
           padding-bottom 2rem
     .main-right
