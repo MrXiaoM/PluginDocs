@@ -90,6 +90,10 @@
 					$downloadTable.append('<tr><td class="download-description"><code class="version">' + versionName + '</code>' + bodyRendered + '</td>' + download + '</tr>');
 				}
 			}
+		}).catch(e => {
+			window.alert("无法访问 api.github.com - " + e + "\n请检查网络连接是否正常，以及当前网络是否遭受 DNS 污染。")
+			$downloadTable.html('<tr><td>未获取</td></tr>')
+			console.error(e)
 		});
 
 		$syncBtn.prop('disabled', false)
