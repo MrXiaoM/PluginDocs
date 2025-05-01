@@ -1,7 +1,7 @@
 <template>
   <div
     class="body-bg"
-    :style="`background: url(${bgImg}) center center / cover no-repeat;opacity:${opacity}`"
+    :style="`background-image: url(${bgImg}); opacity:${opacity}`"
   ></div>
 </template>
 
@@ -56,4 +56,8 @@ export default {
   height 100vh
   width 100vw
   transition background 0.5s
+  background-position-x center
+  background-position-y center
+  background-size cover
+  background-repeat no-repeat
 </style>
