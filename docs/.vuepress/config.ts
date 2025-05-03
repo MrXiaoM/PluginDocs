@@ -44,7 +44,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     pageStyle: 'card', // 页面风格，可选值：'card'卡片 | 'line' 线（未设置bodyBgImg时才生效）， 默认'card'。 说明：card时背景显示灰色衬托出卡片样式，line时背景显示纯色，并且部分模块带线条边框
 
-    bodyBgImg: ['/img/dirt.png','/img/stone.png','/img/netherrack.png','/img/end_stone.png'],
+    // bodyBgImg: ['/img/dirt.png','/img/stone.png','/img/netherrack.png','/img/end_stone.png'],
+    bodyBgImg: ['/img/dirt.png'],
     bodyBgImgOpacity: 1.0, // body背景图透明度，选值 0.1~1.0, 默认0.5
     bodyBgImgInterval: 15, // body多张背景图时的切换间隔, 默认15，单位s
     // titleBadge: false, // 文章标题前的图标是否显示，默认true
@@ -108,8 +109,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       createYear: 2018, // 博客创建年份
       copyrightInfo:
         '<a href="https://www.mrxiaom.top">人间工作P</a> | 到<a class="afdian" href="https://afdian.com/a/mrxiaom" target="_blank">爱发电</a>支持我'
-      + '<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p>'
-      + '<div style="display:none"><img src="/img/dirt.png"><img src="/img/stone.png"><img src="/img/netherrack.png"><img src="/img/end_stone.png"></div>',
+      + '<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p>',
     },
   },
 
