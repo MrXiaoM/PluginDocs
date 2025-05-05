@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /img/web.png
+heroImage: /img/logo.png
 heroText: Plugins
 tagline: 人间工作P的插件文档
 actionText: 立刻进入 →
