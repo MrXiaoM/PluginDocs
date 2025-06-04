@@ -13,6 +13,21 @@ postList: none
 # hideRightBar: true # 是否隐藏右侧边栏
 ---
 
+::: cardList 2
+```yaml
+- name: 插件文档
+  desc: Bukkit插件相关使用文档
+  bgColor: '#157BAE'
+  textColor: '#ffffff'
+  link: /docs/
+- name: 开发文档
+  desc: 一些依赖库的开发手册
+  bgColor: '#ffca39'
+  textColor: '#ffffff'
+  link: /elopers/
+```
+:::
+
 ![](https://box.mcio.dev/github/readme-stats)
 
 ![](https://s1.mrxiaom.top/github-snake.svg)
