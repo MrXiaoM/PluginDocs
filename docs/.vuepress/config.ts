@@ -108,7 +108,8 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       createYear: 2018, // 博客创建年份
       copyrightInfo:
         '<a href="https://www.mrxiaom.top">人间工作P</a> | 到<a class="afdian" href="https://afdian.com/a/mrxiaom" target="_blank">爱发电</a>支持我'
-      + '<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p>',
+      + '<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p>'
+      + '<p>《我的世界》和《Minecraft》是微软公司和 Mojang Synergies AB 的商标，本站点与微软公司等没有从属关系。</p>',
     },
   },
 
