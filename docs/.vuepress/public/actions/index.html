@@ -6,11 +6,11 @@
 -->
 <html lang="zh">
 <head>
-  <title>插件下载</title>
+  <title>开发版本下载</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="icon" href="/img/logo.png" />
-  <link rel="stylesheet" href="/dl/main.css" />
+  <link rel="stylesheet" href="/actions/main.css" />
   <link href="https://unpkg.com/bootstrap@4.3.1/dist/css/bootstrap-grid.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://unpkg.com/github-markdown-css@5.8.1/github-markdown-light.css">
   <noscript><link rel="stylesheet" href="/noscript.css" /></noscript>
@@ -24,7 +24,7 @@
       <div class="inner">
         <!-- Logo -->
           <span class="logo">
-            <span class="symbol"><img src="../img/logo.png" alt="" /></span><span class="title">插件下载</span> | <a href="https://plugins.mcio.dev">MCIO Plugins</a>
+            <span class="symbol"><img src="/img/logo.png" alt="" /></span><span class="title">构建下载</span> | <a href="https://plugins.mcio.dev">MCIO Plugins</a>
       </span>
       </div>
     </header>
@@ -33,33 +33,28 @@
     <div id="main">
       <div class="inner">
         <header>
-          <p>下载 Github 上的 Minecraft 服务端插件。</p>
-          <p>P.S: 链接最前面加 <code>https://plugins.mcio.dev/dl?url=</code> 即可转跳到该页面并获取版本列表。</p>
+          <p>下载 Github Actions 上的开发版本构建。</p>
+          <p>感谢开源项目 <a href="https://nightly.link" target="_blank">nightly.link</a></p>
         </header>
         <div class="row gtr-uniform">
-          <div class="col-4 col-12-xsmall">
+          <div class="col-6 col-12-xsmall">
             <label for="text-author">作者</label>
             <input type="text" name="text-author" id="text-author" value="MrXiaoM" autocomplete="off" />
           </div>
-          <div class="col-4 col-12-xsmall">
-            <label for="text-name">插件名</label>
+          <div class="col-6 col-12-xsmall">
+            <label for="text-name">仓库</label>
             <input type="text" name="text-name" id="text-name" value="" autocomplete="off" />
           </div>
-          <div class="col-4 col-12-xsmall sync-button">
+          <div class="col-6 col-12-xsmall">
+            <label for="text-workflow">工作流文件</label>
+            <input type="text" name="text-name" id="text-workflow" value="" autocomplete="off" placeholder="全部" />
+          </div>
+          <div class="col-6 col-12-xsmall sync-button">
             <button href="javascript:void(0);" class="button fit icon solid fa-sync">获取</button>
           </div>
           
-          <div class="col-12">
-            <select name="mirror-category" id="mirror-category">
-              <option value="https://gitproxy.click/{0}">镜像 gitproxy.click</option>
-              <option value="https://github.tbedu.top/{0}">镜像 github.tbedu.top</option>
-              <option value="https://ghproxy.net/{0}">镜像 ghproxy.net</option>
-              <option value="https://gh-proxy.net/{0}">镜像 gh-proxy.net</option>
-              <option value="{0}">Github 源站</option>
-            </select>
-          </div>
           <div class="table-wrapper col-12">
-            <label>下载版本</label>
+            <label>下载构建</label>
             <table class="alt split download-list">
               <tbody>
                 <tr>
@@ -92,6 +87,6 @@
 <!-- Scripts -->
   <script src="https://unpkg.com/jquery@3.6.0/dist/jquery.min.js"></script>
   <script src="https://unpkg.com/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
-  <script src="/dl/main.js"></script>
+  <script src="/actions/main.js"></script>
 </body>
 </html>
