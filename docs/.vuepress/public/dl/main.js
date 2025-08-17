@@ -65,7 +65,7 @@
 				'<tr><td colspan="2"><ul class="inline-ul">' +
 				  '<li><a target="_blank" href="https://github.com/' + author + '/' + name + '">Github</a></li>' +
 				  '<li><a target="_blank" href="https://github.com/' + author + '/' + name + '/releases">Releases</a></li>' +
-				  '<li><a target="_blank" href="https://github.com/' + author + '/' + name + '/actions">开发版本下载</a></li>' +
+				  '<li><a target="_blank" href="https://nightly.link/' + author + '/' + name + '/workflows/build/main/' + name + '">最新开发版本下载</a></li>' +
 				'</ul></td></tr>');
 			for (let i = 0; i < json.length; i++) {
 				let obj = json[i];
