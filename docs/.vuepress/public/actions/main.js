@@ -60,7 +60,8 @@
 			}
 			$downloadTable.append(
 				'<tr><td colspan="2"><ul class="inline-ul">' +
-				  '<li><a class="fab fa-github" target="_blank" href="https://github.com/' + author + '/' + name + '">Github</a></li>' +
+				  '<li><a class="fab fa-github" target="_blank" href="https://github.com/' + author + '/' + name + '"> Github</a></li>' +
+				  '<li><a class="far fa-folder" href="https://plugins.mcio.dev/dl?author=' + author + '&repo=' + name + '"> 下载正式版本</a></li>' +
 				'</ul></td></tr>');
 			let workflowRuns = json.workflow_runs;
 			for (let i = 0; i < workflowRuns.length; i++) {
