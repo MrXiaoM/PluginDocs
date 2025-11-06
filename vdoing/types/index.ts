@@ -147,7 +147,8 @@ export interface VdoingThemeConfig extends NoSidebar4DefaultThemeConfig {
    */
   footer?: {
     createYear: number,
-    copyrightInfo: string
+    copyrightInfo: string,
+    extraContent: string,
   }
 
   /**
