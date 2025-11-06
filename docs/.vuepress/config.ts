@@ -1,9 +1,17 @@
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
 import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
+import { execSync } from 'child_process'
 import dayjs from 'dayjs'
 
 const DOMAIN_NAME = 'plugins.mcio.dev' // 域名 (不带https)
 const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
+
+let repository = 'MrXiaoM/PluginDocs'
+let commitHashLong = execSync('git rev-parse HEAD').toString().replace('\n', '')
+let commitHashShort = execSync('git rev-parse --short HEAD').toString().replace('\n', '')
+let commitHashHtml = `<a class="commit iconfont icon-branch" target="_blank" href="https://github.com/${repository}/commit/${commitHashLong}">${commitHashShort}</a>`
+
+console.log(`Commit Hash: ${commitHashShort} (${commitHashLong})`)
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
   theme: 'vdoing',
@@ -28,7 +36,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
-    repo: 'MrXiaoM/PluginDocs', // 导航栏右侧生成Github链接
+    repo: repository, // 导航栏右侧生成Github链接
     lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
     docsDir: 'docs', // 编辑的文件夹
     docsBranch: 'main', // 编辑的文件所在分支，默认master。 注意：如果你的分支是main则修改为main
@@ -83,7 +91,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
 
     // 社交图标 (显示于博主信息栏和页脚栏。内置图标：https://doc.xugaoyi.com/pages/a20ce8/#social)
     social: {
-      // iconfontCssFile: '//at.alicdn.com/t/xxx.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自己添加。阿里图片库：https://www.iconfont.cn/
+      iconfontCssFile: '//at.alicdn.com/t/c/font_5059397_uto5wv4zop.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自己添加。阿里图片库：https://www.iconfont.cn/
       icons: [
         {
           iconClass: 'icon-youjian',
@@ -106,10 +114,11 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 页脚信息
     footer: {
       createYear: 2018, // 博客创建年份
-      copyrightInfo:
-        '<a href="https://www.mrxiaom.top">人间工作P</a> | 到<a class="afdian" href="https://afdian.com/a/mrxiaom" target="_blank">爱发电</a>支持我'
-      + '<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p>'
-      + '<p>《我的世界》和《Minecraft》是微软公司和 Mojang Synergies AB 的商标，本站点与微软公司等没有从属关系。</p>',
+      copyrightInfo: `<a href="https://www.mrxiaom.top">人间工作P</a> | 到<a class="afdian" href="https://afdian.com/a/mrxiaom" target="_blank">爱发电</a>支持我 | ${commitHashHtml}`,
+      extraContent: [
+        '<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p>',
+        '<p>《我的世界》和《Minecraft》是微软公司和 Mojang Synergies AB 的商标，本站点与微软公司等没有从属关系。</p>',
+      ].join(''),
     },
   },
 
