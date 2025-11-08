@@ -9,7 +9,7 @@ const WEB_SITE = `https://${DOMAIN_NAME}` // 网址
 let repository = 'MrXiaoM/PluginDocs'
 let commitHashLong = execSync('git rev-parse HEAD').toString().replace('\n', '')
 let commitHashShort = execSync('git rev-parse --short HEAD').toString().replace('\n', '')
-let commitHashHtml = `<a class="commit iconfont icon-branch" target="_blank" href="https://github.com/${repository}/commit/${commitHashLong}">${commitHashShort}</a>`
+let commitHashHtml = `<a class="commit iconfont icon-branch" title="当前版本 Commit Hash" target="_blank" href="https://github.com/${repository}/commit/${commitHashLong}">${commitHashShort}</a>`
 
 console.log(`Commit Hash: ${commitHashShort} (${commitHashLong})`)
 
