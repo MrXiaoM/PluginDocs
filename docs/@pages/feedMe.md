@@ -5,6 +5,8 @@ article: false
 permalink: /feedme
 ---
 
+![header](https://pic1.imgdb.cn/item/68e87bf6c5157e1a8860e8b4.webp)
+
 你的支持是我（人间工作）继续更新插件的动力！
 
 相信同为 Minecraft 服务器内容创作者的你也知道，插件开发并非一件容易的事，如何端好服务端兼容这碗水更是件困难的事。  
