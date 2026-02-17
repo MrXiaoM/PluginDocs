@@ -4,13 +4,11 @@
 
 ## 本地调试
 
-初始化依赖链接
+如果你使用 NTFS 等文件系统，使用以下命令修改依赖链接
 ```shell
-cd vdoing
-yarn link
-cd ..
-yarn link "vuepress-theme-vdoing"
+yarn add vuepress-theme-vdoing@link:./vdoing/
 ```
+（注意提交 commit 时不要提交 `package.json`）
 
 构建并运行
 ```shell
