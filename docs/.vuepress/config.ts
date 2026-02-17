@@ -31,7 +31,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 导航配置
     nav: [
       { text: '首页', link: '/' },
-      { text: '爱发电', link: 'https://afdian.com/a/mrxiaom' },
+      { text: '赞助', link: '/feedme' },
       { text: '无法下载?', link: 'https://plugins.mcio.dev/dl' },
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
@@ -114,7 +114,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
     // 页脚信息
     footer: {
       createYear: 2018, // 博客创建年份
-      copyrightInfo: `<a href="https://www.mrxiaom.top">人间工作P</a> | 到<a class="afdian" href="https://afdian.com/a/mrxiaom" target="_blank">爱发电</a>支持我 | ${commitHashHtml}`,
+      copyrightInfo: `<a href="https://www.mrxiaom.top">人间工作P</a> | 到<a class="afdian" href="/feedme" target="_blank">赞助页面</a>支持我 | ${commitHashHtml}`,
       extraContent: [
         '<p>除非特别说明，本站点所有文章均以 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/legalcode" target="_blank">CC BY-SA</a> 协议授权</p>',
         '<p>《我的世界》和《Minecraft》是微软公司和 Mojang Synergies AB 的商标，本站点与微软公司等没有从属关系。</p>',
