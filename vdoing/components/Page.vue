@@ -27,6 +27,13 @@
             {{ $frontmatter.description }}
           </blockquote>
 
+          <a class="sponsorship-card" href="/feedme" target="_blank" v-if="$frontmatter.sponsorship">
+            <div>
+              <p class="sponsor-card__title">✨喜欢这个插件吗？</p>
+              <p class="sponsor-card__desc">你的支持是我们持续维护的动力，点击查看赞助详情</p>
+            </div>
+          </a>
+
           <slot name="top" v-if="isShowSlotT" />
 
           <Content class="theme-vdoing-content" />
@@ -142,6 +149,41 @@ export default {
 .theme-vdoing-wrapper
   .content-wrapper
     position relative
+  .sponsorship-card
+      width calc(100% - .7rem)
+      margin .35rem
+      background linear-gradient(135deg, #10111E 0%, #282A35 100%)
+      border-radius .5em
+      border #F8F8FF 1px solid
+      color var(--textColor)
+      display flex
+      box-shadow 1px 1px 2px 0 rgba(0,0,0,.06)
+      transition all .4s
+      &:hover
+        text-decoration none
+        box-shadow: 0 10px 20px -10px var(--randomColor, rgba(0,0,0,0.15));
+        transform: translateY(-3px) scale(1.01, 1.01)
+        div p
+          text-shadow 3px 2px 5px rgba(0, 0, 0, 0.15)
+      .sponsor-card__title {
+        font-size 1.6em
+        color #00FFC6
+        margin 0 0 4px 0
+        font-weight 600
+      }
+      .sponsor-card__desc {
+        font-size 1.3em
+        color #FFF000
+        margin 0
+      }
+      div
+        flex 1
+        display inline-block
+        padding 1rem 0
+        p
+          margin 0
+          padding 0 1rem
+          transition text-shadow .4s
   h1
     .title-tag
       height 1.5rem
