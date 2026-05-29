@@ -5,7 +5,7 @@ article: false
 permalink: /feedme
 ---
 
-![header](https://pic1.imgdb.cn/item/69b2d2148bff4b5d2a20e220.webp)
+![header](https://pic1.imgdb.cn/item/6a193100c17c6e53b6587213.webp)
 
 你的支持是我（人间工作）继续更新插件的动力！
 
