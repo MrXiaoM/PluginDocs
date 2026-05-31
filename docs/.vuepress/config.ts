@@ -1,5 +1,5 @@
 import { defineConfig4CustomTheme, UserPlugins } from 'vuepress/config'
-import { VdoingThemeConfig } from 'vuepress-theme-vdoing/types'
+import { VdoingThemeConfig } from './theme/types'
 import { execSync } from 'child_process'
 import dayjs from 'dayjs'
 
@@ -14,7 +14,6 @@ let commitHashHtml = `<a class="commit iconfont icon-branch" title="当前版本
 console.log(`Commit Hash: ${commitHashShort} (${commitHashLong})`)
 
 export default defineConfig4CustomTheme<VdoingThemeConfig>({
-  theme: 'vdoing',
 
   locales: {
     '/': {
