@@ -114,6 +114,10 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       appId: 'CEQWO32R8M',
       indexName: 'DocCrawler',
       apiKey: '89797ca48aa9698e46d5d3d7a1deac64',
+      algoliaOptions: {
+        nbPages: 20,
+        hitsPerPage: 10,
+      },
     },
 
     // 页脚信息
