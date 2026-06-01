@@ -17,6 +17,6 @@ yarn dev:win
 
 目前部署在 Cloudflare Pages 上面，构建命令如下
 ```shell
-git fetch --unshallow origin main && export TZ=Asia/Shanghai && export NODE_OPTIONS=--openssl-legacy-provider && node --max_old_space_size=4096 ./node_modules/vuepress/cli.js build docs
+git fetch --unshallow origin main && npm run build
 ```
 构建输出目录为 `docs/.vuepress/dist`
