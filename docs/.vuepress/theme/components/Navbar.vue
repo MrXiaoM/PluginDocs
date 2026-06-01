@@ -26,6 +26,10 @@
         'max-width': linksWrapMaxWidth + 'px'
       } : {}"
     >
+      <AlgoliaSearchBox
+        v-if="isAlgoliaSearch"
+        :options="algolia"
+      />
       <NavLinks class="can-hide" />
       <div
           class="repo-link"
@@ -43,15 +47,40 @@
 </template>
 
 <script>
+import AlgoliaSearchBox from '@theme/components/AlgoliaSearchBox'
 import SidebarButton from '@theme/components/SidebarButton.vue'
 import NavLinks from '@theme/components/NavLinks.vue'
 
 export default {
-  components: { SidebarButton, NavLinks },
+  components: {
+    SidebarButton,
+    NavLinks,
+    AlgoliaSearchBox,
+  },
 
   data () {
     return {
       linksWrapMaxWidth: null
+    }
+  },
+
+  computed: {
+    algolia () {
+      return this.$themeLocaleConfig.algolia || this.$site.themeConfig.algolia || {}
+    },
+
+    isAlgoliaSearch () {
+      return this.algolia && this.algolia.apiKey && this.algolia.indexName
+    },
+
+    repoLink () {
+      const { repo } = this.$site.themeConfig
+      if (repo) {
+        return /^https?:/.test(repo)
+          ? repo
+          : `https://github.com/${repo}`
+      }
+      return null
     }
   },
 
@@ -68,25 +97,6 @@ export default {
     }
     handleLinksWrapWidth()
     window.addEventListener('resize', handleLinksWrapWidth, false)
-  },
-
-  computed: {
-    algolia () {
-      return {}
-    },
-
-    isAlgoliaSearch () {
-      return false
-    },
-    repoLink () {
-      const { repo } = this.$site.themeConfig
-      if (repo) {
-        return /^https?:/.test(repo)
-          ? repo
-          : `https://github.com/${repo}`
-      }
-      return null
-    }
   }
 }
 
@@ -126,8 +136,10 @@ $navbar-horizontal-padding = 1.5rem
     right $navbar-horizontal-padding
     top $navbar-vertical-padding
     display flex
+    align-items center
     .search-box
       flex 0 0 auto
+      margin-right .75rem
       vertical-align top
     .repo-link
       padding-left 1rem
@@ -150,6 +162,10 @@ $navbar-horizontal-padding = 1.5rem
       display none
     .links
       padding-left 1.5rem
+      .search-box
+        margin-right 0
+    .repo-link
+      display none
     .site-name
       width calc(100vw - 9.4rem)
       overflow hidden

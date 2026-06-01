@@ -110,6 +110,12 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       ],
     },
 
+    algolia: {
+      appId: 'CEQWO32R8M',
+      indexName: 'DocCrawler',
+      apiKey: '89797ca48aa9698e46d5d3d7a1deac64',
+    },
+
     // 页脚信息
     footer: {
       createYear: 2018, // 博客创建年份
@@ -132,6 +138,7 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       },
     ],
     ['meta', { name: 'theme-color', content: '#bb4445' }], // 移动浏览器主题颜色
+    ['link', { rel: "preconnect", href: "https://CEQWO32R8M-dsn.algolia.net", crossorigin: undefined }],
   ],
 
 
