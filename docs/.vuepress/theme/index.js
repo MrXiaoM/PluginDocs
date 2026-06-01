@@ -1,10 +1,18 @@
 const path = require('path')
+const Config = require('markdown-it-chain')
+const { removePlugin } = require('@vuepress/markdown')
+const { PLUGINS } = require('@vuepress/markdown/lib/constant')
 const setFrontmatter = require('./node_utils/setFrontmatter')
 const getSidebarData = require('./node_utils/getSidebarData')
 const { createPage, deletePage } = require('./node_utils/handlePage')
 const chalk = require('chalk') // 命令行打印美化
 const yaml = require('js-yaml') // yaml转js
 const log = console.log
+
+const Prism = require('prismjs')
+require('prismjs/components/prism-diff')
+require('prismjs/components/prism-yaml')
+const markdownItPrism = require('markdown-it-prism')
 
 // md容器名
 const CARD_LIST = 'cardList'
@@ -67,6 +75,39 @@ module.exports = (options, ctx) => {
     },
 
     plugins: [
+      (options, context) => ({
+        name: 'my-internal-plugin',
+        
+        /**
+         * @param {Config} config 
+         */
+        chainMarkdown(config) {
+          removePlugin(config, PLUGINS.HIGHLIGHT_LINES)
+          removePlugin(config, PLUGINS.PRE_WRAPPER)
+          removePlugin(config, PLUGINS.SNIPPET)
+          config
+            .plugin('prismjs')
+              .use(markdownItPrism, [Object.assign({
+                highlightInlineCode: false,
+                plugins: ['diff-highlight', 'autolinker'],
+                init(prism) {
+                  Object.keys(prism.languages).forEach(lang => {
+                    if (!lang.startsWith('diff-') && prism.languages[lang] && prism.languages.diff) {
+                      prism.languages[`diff-${lang}`] = prism.languages.diff
+                    }
+                  })
+                },
+              })])
+              .end()
+            .plugin(PLUGINS.PRE_WRAPPER)
+              .use(codeBlockWrapper)
+              .end()
+          ;
+          // console.log('Markdown plugins:')
+          // console.log(config.plugins)
+        },
+
+      }),
       ['@vuepress/active-header-links', options.activeHeaderLinks],
       '@vuepress/plugin-nprogress',
       ['smooth-scroll', enableSmoothScroll],
@@ -165,6 +206,54 @@ module.exports = (options, ctx) => {
 
     ]
   }
+}
+
+function codeBlockWrapper(md) {
+  const wrap = (wrapped) => (...args) => {
+    const [tokens, idx] = args
+    const token = tokens[idx]
+    const rawCode = wrapped(...args)
+    const lang = getCodeLang(token.info)
+    const langClass = lang ? `language-${lang}` : 'language-text'
+    const displayLang = escapeHtml(normalizeDisplayLang(lang))
+
+    return `<!--beforebegin--><div class="${langClass} extra-class line-numbers-mode">`
+      + `<!--afterbegin--><span class="code-lang">${displayLang}</span>${rawCode}<!--beforeend--></div><!--afterend-->`
+  }
+  const { fence, code_block: codeBlock } = md.renderer.rules
+  md.renderer.rules.fence = wrap(fence)
+  md.renderer.rules.code_block = wrap(codeBlock)
+}
+
+function getCodeLang(info = '') {
+  let code = (info.trim().split(/\s+/)[0] || 'text').replace(/\{.*$/, '')
+  if (code.startsWith('diff-')) {
+    return code.substring(5).toLowerCase();
+  } else {
+    return code.toLowerCase()
+  }
+}
+
+function normalizeDisplayLang(lang) {
+  if (!lang) return 'text'
+  const aliases = {
+    javascript: 'js',
+    typescript: 'ts',
+    markup: 'html',
+    markdown: 'md',
+    ruby: 'rb',
+    python: 'py',
+    bash: 'sh'
+  }
+  return aliases[lang] || lang
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replace(/&/g, '&' + 'amp;')
+    .replace(/"/g, '&' + 'quot;')
+    .replace(/</g, '&' + 'lt;')
+    .replace(/>/g, '&' + 'gt;')
 }
 
 
