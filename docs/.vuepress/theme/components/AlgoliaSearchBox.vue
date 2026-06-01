@@ -118,6 +118,8 @@ export default {
           {
             inputSelector: '#algolia-search-input',
             autocompleteOptions: {
+              minLength: 2,
+              debounce: 350,
               ...autocompleteOptions,
               debug: true
             },

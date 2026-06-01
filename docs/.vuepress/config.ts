@@ -115,7 +115,6 @@ export default defineConfig4CustomTheme<VdoingThemeConfig>({
       indexName: 'DocCrawler',
       apiKey: '89797ca48aa9698e46d5d3d7a1deac64',
       algoliaOptions: {
-        paginationLimitedTo: 20,
         hitsPerPage: 10,
       },
     },
