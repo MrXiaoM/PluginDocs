@@ -155,6 +155,7 @@ function wrapCodeLines(code) {
   Array.from(code.childNodes).forEach(node => {
     appendNodeByLines(node, lines)
   })
+  removeTrailingEmptyLine(lines)
 
   lines.forEach((line, index) => {
     const lineNumber = document.createElement('span')
@@ -201,6 +202,16 @@ function splitNodeByLines(node) {
     })
   })
   return lineNodes
+}
+
+function removeTrailingEmptyLine(lines) {
+  if (lines.length > 1 && isCodeLineEmpty(lines[lines.length - 1])) {
+    lines.pop()
+  }
+}
+
+function isCodeLineEmpty(line) {
+  return !Array.from(line.childNodes).some(node => node.textContent.length > 0)
 }
 
 function createCodeLine() {
