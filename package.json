@@ -19,10 +19,10 @@
     "vuepress": "1.9.9",
     "vuepress-plugin-baidu-autopush": "^1.0.1",
     "vuepress-plugin-baidu-tongji": "^1.0.1",
-    "vuepress-plugin-comment": "^0.7.3",
-    "vuepress-plugin-demo-block": "^0.7.2",
-    "vuepress-plugin-one-click-copy": "^1.0.2",
+    "vuepress-plugin-container": "^2.0.2",
     "vuepress-plugin-sitemap": "file:modified/vuepress-plugin-sitemap-2.3.1.tgz",
+    "vuepress-plugin-smooth-scroll": "^0.0.3",
+    "vuepress-plugin-tabs": "^0.3.0",
     "vuepress-plugin-zooming": "^1.1.7",
     "yamljs": "^0.3.0"
   },
@@ -44,10 +44,7 @@
     "markdown-it-sub": "^2.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
-    "vue-tabs-component": "file:modified/vue-tabs-component-1.5.0.tgz",
-    "vuepress-plugin-container": "^2.0.2",
-    "vuepress-plugin-smooth-scroll": "^0.0.3",
-    "vuepress-plugin-tabs": "^0.3.0"
+    "vue-tabs-component": "file:modified/vue-tabs-component-1.5.0.tgz"
   },
   "engines": {
     "node": ">=18.0.0"
