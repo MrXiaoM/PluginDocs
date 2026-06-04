@@ -7,10 +7,7 @@
 构建并运行
 ```shell
 yarn
-# 如果是Linux运行
 yarn dev
-# 如果是Windows运行
-yarn dev:win
 ```
 
 ## 平台构建命令
