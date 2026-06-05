@@ -177,6 +177,14 @@ function highlightCodeBlock(code, lang) {
   code.dataset.prismHighlighted = 'true'
 }
 
+function getLanguage(...nodes) {
+  for (const node of nodes) {
+    const className = Array.from(node.classList).find(item => item.indexOf('language-') === 0)
+    if (className) return className.replace(/^language-/, '')
+  }
+  return 'text'
+}
+
 function normalizeCodeLang(lang) {
   const aliases = {
     javascript: 'js',
